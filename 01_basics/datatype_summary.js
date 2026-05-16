@@ -10,19 +10,26 @@
 //5. undefined
 //6. symbol
 
-
+/*
 const score = 10;
 const message = "Hello";
 const condition = true;
 const value = null;
 let undef; // undefined
+*/
 
+const symbol1 = Symbol("id");
+const symbol2 = Symbol("id");
+
+console.log(symbol1 === symbol2); // false because each symbol is unique even if they have the same description
+
+/*
 console.log(typeof score); // number 
 console.log(typeof message); // string
 console.log(typeof condition); // boolean
 console.log(typeof value); // object (this is a known quirk in JavaScript)
 console.log(typeof undef); // undefined
-
+*/
 
 //non-primitive datatypes
 //1. object
