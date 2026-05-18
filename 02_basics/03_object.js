@@ -1,6 +1,8 @@
+//object literal syntax
+
 const sym = Symbol('unique'); // creating a symbol with a description 'unique'
 
-let user ={
+let user ={              // non-singleton object
     name: 'Tisha',
     age: 22,
     [sym]: "hello",
