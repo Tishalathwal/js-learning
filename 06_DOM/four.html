@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+     // creating new element
+     function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('Python')
+    addLanguage('Java')
+
+
+    //This is optimasing way
+    function optimalway(langName){
+        const li = document.createElement('li')
+       li.appendChild(document.createTextNode(langName))
+       document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('golang')
+
+
+    // edit element
+    const secondLang = document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML = "Mojo"   // 1st way to edit
+    const newli = document.createElement('li')  // 2nd way to edit element using replaceWith method
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>' // 3rd way to edit element using outerHTML property
+
+
+    // delete element
+    const fourthlang = document.querySelector("li:nth-child(4)")
+    fourthlang.remove() // 1st way to delete element using remove method
+    
+
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!--********* DOM *********-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="title">Hello,DOM <span style="display: none">Document Object Model</span></h1>
+    <p class="description">Lorem ipsum dolor sit amet.</p>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+
+<script>
+    // Accessing DOM elements
+    const title = document.getElementById('title');
+    console.log(title);
+    title.textContent;  // accessing all visible or invisible text content of the title 
+    title.innerHTML; // accessing the inner HTML of the title including the span element
+    title.innerText; // accessing the inner text of the title excluding the span element
+    title.style.color = 'blue';  // changing the color of the title
+
+    const description = document.getElementsByClassName('description');
+    console.log(description);
+
+    const items = document.getElementsByTagName('li');
+    console.log(items);
+
+    const firstItem = document.querySelector('li');
+    console.log(firstItem);  // accessing the first item
+
+    const accessBySelector = document.querySelector('#title');  // accessing the title using querySelector for id = #, class= . and tag name
+    console.log(accessBySelector);
+
+    const secondItem = document.querySelectorAll('li');  // accessing all items
+    console.log(secondItem[0]);  // accessing the first item using querySelectorAll
+    //querySelectorAll returns a NodeList, which is similar to an array, so we can access items using index
+   
+    //*****imp--- *for change this node list to an array we can use Array.from() method
+    const itemsArray = Array.from(secondItem);
+    console.log(itemsArray);
+
+</script>
+</html>

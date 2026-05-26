@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // creating element and adding properties to it
+    const div = document.createElement('div')
+    console.log(div); // creating a div element
+    div.id = 'myId'
+    div.className = 'myClass'
+    div.style.color = 'red'
+    div.style.padding = '10px'
+    div.setAttribute('data','myData')
+
+    // div.textContent = 'Hello, I am a div element' //adding text
+    // or we can also use createTextNode method to add text to the element
+    const addText = document.createTextNode("Hello, I am a div element")
+    div.appendChild(addText) //adding text to the div element using appendChild method
+
+
+
+    // ****adding to the html document
+    document.body.appendChild(div) // adding the div element to the body of the document
+</script>
+</html>
