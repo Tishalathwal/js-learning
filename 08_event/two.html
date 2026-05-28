@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event(setTimeout)</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <button id="stop">Stop</button>
+
+    <script>
+        setTimeout(function () {
+            console.log('Tisha');
+        },2000)  // it only appear at once after 2 sec
+
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = "JS";
+        }
+        const stop = setTimeout(changeText,2000);
+
+        // after clicking stop button it will not appear on screen due to clearTimeout 
+        document.querySelector('#stop').addEventListener('click',function () {
+            clearTimeout(stop);   // it will stop the execution part 
+        })
+
+    </script>
+</body>
+</html>

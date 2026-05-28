@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event(setInterval)</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        // setInterval(function () {
+        //     console.log('Tisha');
+        // },2000)  // it only appear at once after 2 sec
+
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = "JS";
+        }
+
+        const originalText = function(){
+            document.querySelector('h1').innerHTML = "JavaScript";
+        }
+
+        let stop;
+        document.querySelector('#start').addEventListener('click',function () {
+            stop = setInterval(changeText,2000);
+        })
+
+        // after clicking stop button it will not appear on screen due to clearInterval
+        document.querySelector('#stop').addEventListener('click',function () {
+            clearInterval(stop);   // it will stop the execution part
+            originalText(); 
+        })
+
+    </script>
+</body>
+</html>
