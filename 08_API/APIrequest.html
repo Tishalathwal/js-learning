@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlhttprequest</title>
+</head>
+<body>
+    <h1>Ready States</h1>
+    <p>0 -	UNSENT	Client has been created. open() not called yet.</p>
+    <p>1 -	OPENED	open() has been called.</p>
+    <p>2 -	HEADERS_RECEIVED	send() has been called, and headers and status are available.</p>
+    <p>3 -	LOADING	Downloading; responseText holds partial data.</p>
+    <p>4 -	DONE	The operation is complete.</p>
+
+    <script>
+        const requestURL = 'https://api.github.com/users/Tishalathwal'
+        const xml = new XMLHttpRequest;  // through this XMLHttpRequest send requests, receive responses & track request states
+
+        xml.open('GET',requestURL); // open() The request is NOT sent yet.
+        xml.onreadystatechange = function(){   // onreadystatechange is event handler means Whenever the request state changes, this function runs
+            console.log(xml.readyState);
+            if (xml.readyState === 4) {
+            
+            // Convert JSON string into JS object
+            const data = JSON.parse(this.responseText)
+
+            // Access followers
+            console.log(typeof data);
+            console.log(data.followers);
+        }
+        }
+        // sends request
+        xml.send();
+
+    </script>
+</body>
+</html>
